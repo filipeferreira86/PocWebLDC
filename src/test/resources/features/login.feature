@@ -5,7 +5,7 @@ Funcionalidade: Permitir fazer login no sistema Web
 	@nexec
   Cenário: Fazer login com sucesso
     Dado que estou na pagina "nome da pagina"
-  	Quando eu informar "nome do usuário" no campo "login"
+		Quando eu informar "nome do usuário" no campo "login"
     E informar "senha válida" no campo "senha"
     E cliar no botão "Login"
     Então deve logar exibindo texto "login com sucesso" no "campo de login"
@@ -13,7 +13,7 @@ Funcionalidade: Permitir fazer login no sistema Web
   @nexec
   Esquema do Cenário: Fazer login com falha
     Dado que estou na pagina "nome da pagina"
-  	Quando eu informar <login> no campo "login"
+		Quando eu informar <login> no campo "login"
     E informar <senha> no campo "senha"
     E cliar no botão "Login"
     Então deve logar exibindo texto <mensagem> no "campo de login"
