@@ -1,14 +1,14 @@
 #language: pt
 Funcionalidade: Permitir fazer login no sistema Web
 
-	@nexec
+	@log
 	Cenário: Validação de tela de login
 		Quando eu acessar a pagina "http://192.168.0.107/POCJavaJavaEnvironment/servlet/com.pocjava.login"
 		Então deve exibir "Sistema de controle de usuários" no campo "TEXTBLOCK1"
 		E campo "vUSUARIOLOGIN"
 		E campo "vUSUARIOSENHA"
 
-  @nexec
+  @log
   Cenário: Fazer login com sucesso
     Dado que estou na pagina "http://192.168.0.107/POCJava.NetEnvironment/login.aspx"
     Quando eu informar "Filipe" no campo "vUSUARIOLOGIN"
@@ -16,7 +16,7 @@ Funcionalidade: Permitir fazer login no sistema Web
     E cliar no botão "BTNLOGIN"
     Então deve logar exibindo texto "Bem vindo Filipe Ferreira de Jesus" no "BOASVINDAS_MPAGE"
 
-  @nexec
+  @log
   Esquema do Cenário: Fazer login com falha
     Dado que estou na pagina "http://192.168.0.107/POCJava.NetEnvironment/login.aspx"
     Quando eu informar <login> no campo "vUSUARIOLOGIN"

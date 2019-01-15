@@ -8,6 +8,7 @@ Funcionalidade: Permitir manutenção de usuário no sistema de gestão de usuá
     E que seja exibida a mensagem "Bem vindo Filipe Ferreira de Jesus" no campo "BOASVINDAS_MPAGE"
     E eu clicar no menu "Cadastro de usuário"
 
+	@man
   Esquema do Cenário: Validação de tela de cadastro de usuário
     Dado que estou na tela de cadastro usuário
     Quando eu clicar no <elemento>
@@ -25,14 +26,18 @@ Funcionalidade: Permitir manutenção de usuário no sistema de gestão de usuá
       | "item no grid"      |
       | "Botão de inclusão" |
 
+	@man
   Esquema do Cenário: Validação de mensagens de erro na inclusão de usuário
     Dado que estou na tela de cadastro usuário
 
+	@man
   Cenário: Inclusão de novo usuário
     Dado 
 
+	@man
   Esquema do Cenário: Validação de mensagens de erro na alteração de usuário
     Dado 
 
+	@man
   Esquema do Cenário: Alteração de usuário
     Dado 

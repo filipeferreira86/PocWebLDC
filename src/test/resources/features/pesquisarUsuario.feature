@@ -6,14 +6,14 @@ Funcionalidade: Permitir pesquisar usuário na tela de cadastro de usuário
     E informar "1234" no campo "vUSUARIOSENHA"
     E cliar no botão "BTNLOGIN"
 
-  @exec
+  @pesq
   Cenário: Validação de tela de pesquisa de usuário
     Dado que seja exibida a mensagem "Bem vindo Filipe Ferreira de Jesus" no campo "BOASVINDAS_MPAGE"
     Quando eu clicar no menu "Cadastro de usuário"
     Então deve exibir uma grid "com os usuários cadastrados"
     E dentro da grid o "usuário"
 
-  @exec
+  @pesq
   Esquema do Cenário: Realizar pesquisa de usuário
     Dado que estou na tela de "Cadastro de usuário"
     Quando eu informar <usuario> no campo "nome"
@@ -24,7 +24,7 @@ Funcionalidade: Permitir pesquisar usuário na tela de cadastro de usuário
       | "Filipe" | "linha"        |
       | "toller" | "linha"        |
 
-  @exec
+  @pesq
   Esquema do Cenário: Realizar pesquisa de usuário inválido
     Dado que estou na tela de "Cadastro de usuário"
     Quando eu informar <usuario> no campo "nome"
