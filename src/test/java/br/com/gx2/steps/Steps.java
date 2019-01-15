@@ -60,8 +60,8 @@ public class Steps {
 	}
 
 	@Quando("^cliar no botão \"([^\"]*)\"$")
-	public void cliarNoBotão(String id) throws Throwable {
-		WebElement btnLogin = driver.findElement(By.id(id));
+	public void cliarNoBotão(String name) throws Throwable {
+		WebElement btnLogin = driver.findElement(By.name(name));
 		btnLogin.click();
 		cenario.embed(PrtSrc.capturar(driver), "image/png");
 	}
@@ -70,6 +70,34 @@ public class Steps {
 	public void deveLogarExibindoTextoNo(String resultado, String id) throws Throwable {
 		WebElement lblRes = driverEspera.until(ExpectedConditions.elementToBeClickable(By.id(id)));
 		Assert.assertEquals(resultado, lblRes.getText());
+		cenario.embed(PrtSrc.capturar(driver), "image/png");
+	}
+
+	@Então("^exibir mensagem de erro \"([^\"]*)\" no \"([^\"]*)\"$")
+	public void exibirMensagemDeErroNo(String resultado, String id) throws Throwable {
+		WebElement lblRes = driverEspera.until(ExpectedConditions.elementToBeClickable(By.id(id)));
+		Assert.assertEquals(resultado, lblRes.getText());
+		cenario.embed(PrtSrc.capturar(driver), "image/png");
+	}
+
+	// Validar tela de Login:
+
+	@Quando("^eu acessar a pagina \"([^\"]*)\"$")
+	public void euAcessarAPagina(String site) throws Throwable {
+		driver.get(site);
+		cenario.embed(PrtSrc.capturar(driver), "image/png");
+	}
+
+	@Então("^deve exibir \"([^\"]*)\" no campo \"([^\"]*)\"$")
+	public void deveExibirNoCampo(String texto, String id) throws Throwable {
+		WebElement lblCabecalho = driver.findElement(By.id(id));
+		Assert.assertEquals(texto, lblCabecalho.getText());
+	}
+
+	@Então("^campo \"([^\"]*)\"$")
+	public void campo(String id) throws Throwable {
+		WebElement efLogin = driver.findElement(By.id(id));
+		Assert.assertTrue(efLogin.isDisplayed());
 	}
 
 	@After

@@ -1,25 +1,33 @@
 #language: pt
-
 Funcionalidade: Permitir fazer login no sistema Web
 
-	@nexec
+	@exec
+	Cenário: Validação de tela de login
+		Quando eu acessar a pagina "http://192.168.0.107/POCJavaJavaEnvironment/servlet/com.pocjava.login"
+		Então deve exibir "Sistema de controle de usuários" no campo "TEXTBLOCK1"
+		E campo "vUSUARIOLOGIN"
+		E campo "vUSUARIOSENHA"
+
+  @nexec
   Cenário: Fazer login com sucesso
-    Dado que estou na pagina "nome da pagina"
-		Quando eu informar "nome do usuário" no campo "login"
-    E informar "senha válida" no campo "senha"
-    E cliar no botão "Login"
-    Então deve logar exibindo texto "login com sucesso" no "campo de login"
+    Dado que estou na pagina "http://192.168.0.107/POCJava.NetEnvironment/login.aspx"
+    Quando eu informar "Filipe" no campo "vUSUARIOLOGIN"
+    E informar "1234" no campo "vUSUARIOSENHA"
+    E cliar no botão "BTNLOGIN"
+    Então deve logar exibindo texto "Bem vindo Filipe Ferreira de Jesus" no "BOASVINDAS_MPAGE"
 
   @nexec
   Esquema do Cenário: Fazer login com falha
-    Dado que estou na pagina "nome da pagina"
-		Quando eu informar <login> no campo "login"
-    E informar <senha> no campo "senha"
-    E cliar no botão "Login"
-    Então deve logar exibindo texto <mensagem> no "campo de login"
+    Dado que estou na pagina "http://192.168.0.107/POCJava.NetEnvironment/login.aspx"
+    Quando eu informar <login> no campo "vUSUARIOLOGIN"
+    E informar <senha> no campo "vUSUARIOSENHA"
+    E cliar no botão "BTNLOGIN"
+    Então exibir mensagem de erro <mensagem> no "gxErrorViewer"
 
     Exemplos: 
-      |login														| senha 															|mensagem					|
-      |"Login inválido"									|"senha válida"												|"Login inválido"	|
-      |"Senha válida" 									|"Senha invalida" 										|"Senha inválida"	|
-      |"Login válido"										|"Senha válida mas de outro usuário"	|"Senha inválida"	|
+      | login            | senha   | mensagem                                                           |
+      | "Login inválido" | "1234"  | "Cadastro não encontrado com este usuário e senha. Favor validar." |
+      | "Filipe"         | "12"    | "Cadastro não encontrado com este usuário e senha. Favor validar." |
+      | "Filipe"         | "abc"   | "Cadastro não encontrado com este usuário e senha. Favor validar." |
+      | ""               | "teste" | "Favor informar usuário."                                          |
+      | "Filipe"         | ""      | "Favor informar senha."                                            |
