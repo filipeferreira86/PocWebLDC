@@ -10,7 +10,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import cucumber.api.PendingException;
 //Imports Cucumber
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
@@ -145,9 +144,9 @@ public class Steps {
 	}
 	
 	@Então("^não deve exibir \"([^\"]*)\" no item da \"([^\"]*)\"$")
-	public void nãoDeveExibirNoItemDa(String arg1, String arg2) throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new PendingException();
+	public void nãoDeveExibirNoItemDa(String arg1, String id) throws Throwable {
+//		Assert.assertTrue(ExpectedConditions.presenceOfElementLocated(By.id(id)));
+		Assert.assertTrue(driver.findElements(By.id(id)).size() < 1);
 	}
 
 	@After

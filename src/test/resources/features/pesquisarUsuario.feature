@@ -7,14 +7,14 @@ Funcionalidade: Permitir pesquisar usuário na tela de cadastro de usuário
     E informar "1234" no campo "vUSUARIOSENHA"
     E cliar no botão "BTNLOGIN"
 
-  @pesq
+  @pesq1
   Cenário: Validação de tela de pesquisa de usuário
     Dado que seja exibida a mensagem "Bem vindo Filipe Ferreira de Jesus" no campo "BOASVINDAS_MPAGE"
     Quando eu clicar no menu "Cadastro"
     Então deve exibir uma grid "GridContainerTbl"
     E dentro da "GridContainerTbl" o "Filipe Ferreira de Jesus"
 
-  @pesq
+  @pesq1
   Esquema do Cenário: Realizar pesquisa de usuário
     Dado que estou na tela de "Cadastro"
     Quando eu informar <usuario> no campo "vUSUARIONOME"
