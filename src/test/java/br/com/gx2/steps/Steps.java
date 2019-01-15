@@ -2,7 +2,6 @@ package br.com.gx2.steps;
 
 //Imports JUnit
 import org.junit.Assert;
-import org.junit.internal.runners.statements.Fail;
 //Imports Selenium
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -92,51 +91,63 @@ public class Steps {
 	@Então("^deve exibir \"([^\"]*)\" no campo \"([^\"]*)\"$")
 	public void deveExibirNoCampo(String texto, String id) throws Throwable {
 		WebElement lblCabecalho = driver.findElement(By.id(id));
+		cenario.embed(PrtSrc.capturar(driver), "image/png");
 		Assert.assertEquals(texto, lblCabecalho.getText());
 	}
 
 	@Então("^campo \"([^\"]*)\"$")
 	public void campo(String id) throws Throwable {
 		WebElement efLogin = driver.findElement(By.id(id));
+		cenario.embed(PrtSrc.capturar(driver), "image/png");
 		Assert.assertTrue("Item não está visivel", efLogin.isDisplayed());
 	}
 
 	@Dado("^que seja exibida a mensagem \"([^\"]*)\" no campo \"([^\"]*)\"$")
 	public void queSejaExibidaAMensagemNoCampo(String texto, String id) throws Throwable {
-		WebElement efLogin = driver.findElement(By.id(id));
-		if(texto != efLogin.getText()) {
-			throw new PendingException("Texto de boas vindas está errado!! Esperado: " + texto + " exibido "+ efLogin.getText());
-		}
 	}
 
 	@Quando("^eu clicar no menu \"([^\"]*)\"$")
-	public void euClicarNoMenu(String id) throws Throwable {
-		WebElement mnCadU = driver.findElement(By.id(id));
+	public void euClicarNoMenu(String linkText) throws Throwable {
+		WebElement mnCadU = driverEspera.until(ExpectedConditions.elementToBeClickable(By.partialLinkText(linkText)));
+		Thread.sleep(1000);
 		mnCadU.click();
+		cenario.embed(PrtSrc.capturar(driver), "image/png");
 	}
 
 	@Então("^deve exibir uma grid \"([^\"]*)\"$")
 	public void deveExibirUmaGrid(String grid) throws Throwable {
-		WebElement grdUsuario = driverEspera.until(ExpectedConditions.presenceOfElementLocated(By.id(grid)));
+		WebElement grdUsuario = driverEspera.until(ExpectedConditions.elementToBeClickable(By.id(grid)));
+		System.out.println(grdUsuario.isDisplayed());
+		cenario.embed(PrtSrc.capturar(driver), "image/png");
 		Assert.assertTrue(grdUsuario.isDisplayed());
 	}
 
-	@Então("^dentro da grid o \"([^\"]*)\"$")
-	public void dentroDaGridO(String user1) throws Throwable {
-		WebElement grdUsuario = driverEspera.until(ExpectedConditions.presenceOfElementLocated(By.id(user1)));
-		Assert.assertTrue("Item não está visivel", grdUsuario.isDisplayed());
+	@Então("^dentro da \"([^\"]*)\" o \"([^\"]*)\"$")
+	public void dentroDaO(String id, String user1) throws Throwable {
+		WebElement grdUsuario = driverEspera.until(ExpectedConditions.elementToBeClickable(By.id(id)));
+		cenario.embed(PrtSrc.capturar(driver), "image/png");
+		Assert.assertTrue("Item não está visivel", grdUsuario.getText().contains(user1));
 	}
 
 	@Dado("^que estou na tela de \"([^\"]*)\"$")
-	public void queEstouNaTelaDe(String id) throws Throwable {
-		WebElement mnCadU = driver.findElement(By.id(id));
+	public void queEstouNaTelaDe(String linkText) throws Throwable {
+		WebElement mnCadU = driverEspera.until(ExpectedConditions.elementToBeClickable(By.partialLinkText(linkText)));
+		Thread.sleep(1000);
 		mnCadU.click();
+		cenario.embed(PrtSrc.capturar(driver), "image/png");
 	}
 
 	@Então("^deve exibir \"([^\"]*)\" no item da \"([^\"]*)\"$")
 	public void deveExibirNoItemDa(String texto, String id) throws Throwable {
 		WebElement grItem = driverEspera.until(ExpectedConditions.elementToBeClickable(By.id(id)));
+		cenario.embed(PrtSrc.capturar(driver), "image/png");
 		Assert.assertTrue("Item não está visivel", grItem.isDisplayed());
+	}
+	
+	@Então("^não deve exibir \"([^\"]*)\" no item da \"([^\"]*)\"$")
+	public void nãoDeveExibirNoItemDa(String arg1, String arg2) throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
 	}
 
 	@After
