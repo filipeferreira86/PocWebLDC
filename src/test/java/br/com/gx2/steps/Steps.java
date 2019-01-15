@@ -2,7 +2,7 @@ package br.com.gx2.steps;
 
 //Imports JUnit
 import org.junit.Assert;
-
+import org.junit.internal.runners.statements.Fail;
 //Imports Selenium
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -11,6 +11,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import cucumber.api.PendingException;
 //Imports Cucumber
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
@@ -98,6 +99,43 @@ public class Steps {
 	public void campo(String id) throws Throwable {
 		WebElement efLogin = driver.findElement(By.id(id));
 		Assert.assertTrue(efLogin.isDisplayed());
+	}
+
+	@Dado("^que seja exibida a mensagem \"([^\"]*)\" no campo \"([^\"]*)\"$")
+	public void queSejaExibidaAMensagemNoCampo(String texto, String id) throws Throwable {
+		WebElement efLogin = driver.findElement(By.id(id));
+		if(texto != efLogin.getText()) {
+			throw new PendingException("Texto de boas vindas está errado!! Esperado: " + texto + " exibido "+ efLogin.getText());
+		}
+	}
+
+	@Quando("^eu clicar no menu \"([^\"]*)\"$")
+	public void euClicarNoMenu(String arg1) throws Throwable {
+		
+	}
+
+	@Então("^deve exibir uma grid \"([^\"]*)\"$")
+	public void deveExibirUmaGrid(String arg1) throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+		throw new PendingException();
+	}
+
+	@Então("^dentro da grid o \"([^\"]*)\"$")
+	public void dentroDaGridO(String arg1) throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+		throw new PendingException();
+	}
+
+	@Dado("^que estou na tela de \"([^\"]*)\"$")
+	public void queEstouNaTelaDe(String arg1) throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+		throw new PendingException();
+	}
+
+	@Então("^deve exibir \"([^\"]*)\" no item da \"([^\"]*)\"$")
+	public void deveExibirNoItemDa(String arg1, String arg2) throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+		throw new PendingException();
 	}
 
 	@After

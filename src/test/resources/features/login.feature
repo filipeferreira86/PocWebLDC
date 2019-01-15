@@ -1,7 +1,7 @@
 #language: pt
 Funcionalidade: Permitir fazer login no sistema Web
 
-	@exec
+	@nexec
 	Cenário: Validação de tela de login
 		Quando eu acessar a pagina "http://192.168.0.107/POCJavaJavaEnvironment/servlet/com.pocjava.login"
 		Então deve exibir "Sistema de controle de usuários" no campo "TEXTBLOCK1"
