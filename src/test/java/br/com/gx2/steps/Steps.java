@@ -10,6 +10,9 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+//Import Classes
+import br.com.gx2.func.PrtSrc;
+import cucumber.api.PendingException;
 //Imports Cucumber
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
@@ -17,9 +20,6 @@ import cucumber.api.java.Before;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.Então;
 import cucumber.api.java.pt.Quando;
-
-//Import Classes
-import br.com.gx2.func.PrtSrc;
 
 public class Steps {
 
@@ -142,11 +142,59 @@ public class Steps {
 		cenario.embed(PrtSrc.capturar(driver), "image/png");
 		Assert.assertTrue("Item não está visivel", grItem.isDisplayed());
 	}
-	
+
 	@Então("^não deve exibir \"([^\"]*)\" no item da \"([^\"]*)\"$")
 	public void nãoDeveExibirNoItemDa(String arg1, String id) throws Throwable {
-//		Assert.assertTrue(ExpectedConditions.presenceOfElementLocated(By.id(id)));
+		Thread.sleep(1000);
 		Assert.assertTrue(driver.findElements(By.id(id)).size() < 1);
+	}
+
+//	manutenção:
+
+	@Dado("^que estou na tela de cadastro usuário$")
+	public void queEstouNaTelaDeCadastroUsuário() throws Throwable {
+	}
+
+	@Quando("^eu clicar no \"([^\"]*)\"$")
+	public void euClicarNo(String arg1) throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+		throw new PendingException();
+	}
+
+	@Então("^deve exibir texto \"([^\"]*)\"$")
+	public void deveExibirTexto(String arg1) throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+		throw new PendingException();
+	}
+
+	@Então("^deve exibir texto \"([^\"]*)\" no item$")
+	public void deveExibirTextoNoItem(String arg1) throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+		throw new PendingException();
+	}
+
+	@Dado("^que estou no formulario de \"([^\"]*)\"$")
+	public void queEstouNoFormularioDe(String arg1) throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+		throw new PendingException();
+	}
+
+	@Quando("^limpar campo \"([^\"]*)\"$")
+	public void limparCampo(String arg1) throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+		throw new PendingException();
+	}
+
+	@Quando("^clicar no botão \"([^\"]*)\"$")
+	public void clicarNoBotão(String arg1) throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+		throw new PendingException();
+	}
+
+	@Então("^deve exibir mensagem \"([^\"]*)\" no campo \"([^\"]*)\"$")
+	public void deveExibirMensagemNoCampo(String arg1, String arg2) throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+		throw new PendingException();
 	}
 
 	@After
