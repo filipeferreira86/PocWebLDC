@@ -98,7 +98,7 @@ public class Steps {
 	@Então("^campo \"([^\"]*)\"$")
 	public void campo(String id) throws Throwable {
 		WebElement efLogin = driver.findElement(By.id(id));
-		Assert.assertTrue(efLogin.isDisplayed());
+		Assert.assertTrue("Item não está visivel", efLogin.isDisplayed());
 	}
 
 	@Dado("^que seja exibida a mensagem \"([^\"]*)\" no campo \"([^\"]*)\"$")
@@ -110,32 +110,33 @@ public class Steps {
 	}
 
 	@Quando("^eu clicar no menu \"([^\"]*)\"$")
-	public void euClicarNoMenu(String arg1) throws Throwable {
-		
+	public void euClicarNoMenu(String id) throws Throwable {
+		WebElement mnCadU = driver.findElement(By.id(id));
+		mnCadU.click();
 	}
 
 	@Então("^deve exibir uma grid \"([^\"]*)\"$")
-	public void deveExibirUmaGrid(String arg1) throws Throwable {
-		// Write code here that turns the phrase above into concrete actions
-		throw new PendingException();
+	public void deveExibirUmaGrid(String grid) throws Throwable {
+		WebElement grdUsuario = driverEspera.until(ExpectedConditions.presenceOfElementLocated(By.id(grid)));
+		Assert.assertTrue(grdUsuario.isDisplayed());
 	}
 
 	@Então("^dentro da grid o \"([^\"]*)\"$")
-	public void dentroDaGridO(String arg1) throws Throwable {
-		// Write code here that turns the phrase above into concrete actions
-		throw new PendingException();
+	public void dentroDaGridO(String user1) throws Throwable {
+		WebElement grdUsuario = driverEspera.until(ExpectedConditions.presenceOfElementLocated(By.id(user1)));
+		Assert.assertTrue("Item não está visivel", grdUsuario.isDisplayed());
 	}
 
 	@Dado("^que estou na tela de \"([^\"]*)\"$")
-	public void queEstouNaTelaDe(String arg1) throws Throwable {
-		// Write code here that turns the phrase above into concrete actions
-		throw new PendingException();
+	public void queEstouNaTelaDe(String id) throws Throwable {
+		WebElement mnCadU = driver.findElement(By.id(id));
+		mnCadU.click();
 	}
 
 	@Então("^deve exibir \"([^\"]*)\" no item da \"([^\"]*)\"$")
-	public void deveExibirNoItemDa(String arg1, String arg2) throws Throwable {
-		// Write code here that turns the phrase above into concrete actions
-		throw new PendingException();
+	public void deveExibirNoItemDa(String texto, String id) throws Throwable {
+		WebElement grItem = driverEspera.until(ExpectedConditions.elementToBeClickable(By.id(id)));
+		Assert.assertTrue("Item não está visivel", grItem.isDisplayed());
 	}
 
 	@After

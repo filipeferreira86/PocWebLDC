@@ -18,7 +18,7 @@ import cucumber.api.junit.Cucumber;
 				"src/test/resources/features/pesquisarUsuario.feature"},
 		glue = "br.com.gx2.steps",
 		snippets = SnippetType.CAMELCASE,
-		tags = "@exec"
+		tags = "@pesq"
 		)
 
 public class RunnerTest {
