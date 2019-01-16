@@ -7,7 +7,7 @@ Funcionalidade: Permitir gerar relatório de usuários em tela
     E informar "1234" no campo "vUSUARIOSENHA"
     E cliar no botão "BTNLOGIN"
 
-  @exec
+  @rel
   Cenário: Validação de tela de relatório de usuário
     Dado que seja exibida a mensagem "Bem vindo Filipe Ferreira de Jesus" no campo "BOASVINDAS_MPAGE"
     Quando eu clicar no menu "Relatório"
@@ -15,7 +15,7 @@ Funcionalidade: Permitir gerar relatório de usuários em tela
     E deve exibir uma grid "GridContainerTbl"
     E dentro da "GridContainerTbl" o "Filipe Ferreira de Jesus"
 
-	@exec
+	@rel
   Esquema do Cenário: Gerar relatório de usuários
     Dado que seja exibida a mensagem "Bem vindo Filipe Ferreira de Jesus" no campo "BOASVINDAS_MPAGE"
     Quando eu clicar no menu "Relatório"

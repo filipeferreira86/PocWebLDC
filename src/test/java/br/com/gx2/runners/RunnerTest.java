@@ -19,7 +19,8 @@ import cucumber.api.junit.Cucumber;
 				"src/test/resources/features/manutencaoUsuario.feature",
 				"src/test/resources/features/relatorioUsuarios.feature"},
 		glue = "br.com.gx2.steps",
-		snippets = SnippetType.CAMELCASE
+		snippets = SnippetType.CAMELCASE,
+		tags = "@log, @pesq, @man, @rel"
 		)
 
 public class RunnerTest {
