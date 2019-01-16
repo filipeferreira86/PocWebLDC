@@ -190,6 +190,7 @@ public class Steps {
 	@Quando("^clicar no botão \"([^\"]*)\"$")
 	public void clicarNoBotão(String id) throws Throwable {
 		WebElement btnConfirmar = driverEspera.until(ExpectedConditions.elementToBeClickable(By.id(id)));
+		Thread.sleep(1000);
 		btnConfirmar.click();
 		cenario.embed(PrtSrc.capturar(driver), "image/png");
 	}
