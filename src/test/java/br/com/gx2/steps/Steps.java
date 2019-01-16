@@ -4,6 +4,7 @@ package br.com.gx2.steps;
 import org.junit.Assert;
 //Imports Selenium
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -12,7 +13,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 //Import Classes
 import br.com.gx2.func.PrtSrc;
-import cucumber.api.PendingException;
 //Imports Cucumber
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
@@ -168,34 +168,30 @@ public class Steps {
 		Assert.assertEquals(text, lblTexto.getText());
 	}
 
-	@Então("^deve exibir texto \"([^\"]*)\" no item$")
-	public void deveExibirTextoNoItem(String arg1) throws Throwable {
-		// Write code here that turns the phrase above into concrete actions
-		throw new PendingException();
-	}
-
 	@Dado("^que estou no formulario de \"([^\"]*)\"$")
-	public void queEstouNoFormularioDe(String arg1) throws Throwable {
-		// Write code here that turns the phrase above into concrete actions
-		throw new PendingException();
+	public void queEstouNoFormularioDe(String id) throws Throwable {
+		WebElement btnInsert = driverEspera.until(ExpectedConditions.elementToBeClickable(By.id(id)));
+		Thread.sleep(1000);
+		btnInsert.click();
 	}
 
 	@Quando("^limpar campo \"([^\"]*)\"$")
-	public void limparCampo(String arg1) throws Throwable {
-		// Write code here that turns the phrase above into concrete actions
-		throw new PendingException();
+	public void limparCampo(String id) throws Throwable {
+		WebElement efLimpar = driverEspera.until(ExpectedConditions.elementToBeClickable(By.id(id)));
+		efLimpar.clear();
+		efLimpar.sendKeys(Keys.TAB);
 	}
 
 	@Quando("^clicar no botão \"([^\"]*)\"$")
-	public void clicarNoBotão(String arg1) throws Throwable {
-		// Write code here that turns the phrase above into concrete actions
-		throw new PendingException();
+	public void clicarNoBotão(String id) throws Throwable {
+		WebElement btnConfirmar = driverEspera.until(ExpectedConditions.elementToBeClickable(By.id(id)));
+		btnConfirmar.click();
 	}
 
 	@Então("^deve exibir mensagem \"([^\"]*)\" no campo \"([^\"]*)\"$")
-	public void deveExibirMensagemNoCampo(String arg1, String arg2) throws Throwable {
-		// Write code here that turns the phrase above into concrete actions
-		throw new PendingException();
+	public void deveExibirMensagemNoCampo(String msg, String id) throws Throwable {
+		WebElement blnAlerta = driverEspera.until(ExpectedConditions.elementToBeClickable(By.id(id)));
+		Assert.assertEquals(msg, blnAlerta.getText());
 	}
 
 	@After

@@ -9,33 +9,32 @@ Funcionalidade: Permitir manutenção de usuário no sistema de gestão de usuá
     E que seja exibida a mensagem "Bem vindo Filipe Ferreira de Jesus" no campo "BOASVINDAS_MPAGE"
     E eu clicar no menu "Cadastro"
 
-  @man @exec
+  @man
   Cenário: Validação de tela de cadastro de usuário
     Dado que estou na tela de cadastro usuário
     Quando eu clicar no "BTNINSERT"
     Então deve exibir texto "Login" no label "/html/body/form/div[2]/div[2]/div/div/div/div/div[3]/div/div/div/div/div/div[2]/div/div/div[2]/div/div/label"
-    E campo "referente ao login"
-    Então deve exibir texto "Nome" no label "/html/body/form/div[2]/div[2]/div/div/div/div/div[3]/div/div/div/div/div/div[2]/div/div/div[2]/div/div/label"
-    E campo "referente ao nome"
-    Então deve exibir texto "Senha" no label "/html/body/form/div[2]/div[2]/div/div/div/div/div[3]/div/div/div/div/div/div[2]/div/div/div[2]/div/div/label"
-    E campo "referente ao senha"
-    Então deve exibir texto "Ativo" no label "/html/body/form/div[2]/div[2]/div/div/div/div/div[3]/div/div/div/div/div/div[2]/div/div/div[2]/div/div/label"
-    E campo "referente ao ativo"
-	
-	Cenário: Validação de tela de cadastro de usuário
-    Dado que estou na tela de cadastro usuário
-    Quando eu clicar no "span_vUPDATE_0001"
-    Então deve exibir texto "Nome"
-    E campo "referente ao nome"
-    E deve exibir texto "login" no item
-    E campo "referente ao login"
-    E deve exibir texto "Senha" no item
-    E campo "referente ao senha"
-    E deve exibir texto "Ativo" no item
-    E campo "referente ao ativo"
-
+    E campo "USUARIOLOGIN"
+    E deve exibir texto "Nome" no label "/html/body/form/div[2]/div[2]/div/div/div/div/div[3]/div/div/div/div/div/div[2]/div/div/div[3]/div/div/label"
+    E campo "USUARIONOME"
+    E deve exibir texto "Senha" no label "/html/body/form/div[2]/div[2]/div/div/div/div/div[3]/div/div/div/div/div/div[2]/div/div/div[4]/div/div/label"
+    E campo "USUARIOSENHA"
+    E deve exibir texto "Ativo" no label "/html/body/form/div[2]/div[2]/div/div/div/div/div[3]/div/div/div/div/div/div[2]/div/div/div[5]/div/div/label"
+    E campo "USUARIOATIVO"
 
   @man
+  Cenário: Validação de tela de alteração de usuário
+    Dado que estou na tela de cadastro usuário
+    Quando eu clicar no "span_vUPDATE_0001"
+    Então deve exibir texto "Login" no label "/html/body/form/div[2]/div[2]/div/div/div/div/div[3]/div/div/div/div/div/div[2]/div/div/div[2]/div/div/label"
+    E deve exibir texto "Nome" no label "/html/body/form/div[2]/div[2]/div/div/div/div/div[3]/div/div/div/div/div/div[2]/div/div/div[3]/div/div/label"
+    E campo "USUARIONOME"
+    E deve exibir texto "Senha" no label "/html/body/form/div[2]/div[2]/div/div/div/div/div[3]/div/div/div/div/div/div[2]/div/div/div[4]/div/div/label"
+    E campo "USUARIOSENHA"
+    E deve exibir texto "Ativo" no label "/html/body/form/div[2]/div[2]/div/div/div/div/div[3]/div/div/div/div/div/div[2]/div/div/div[5]/div/div/label"
+    E campo "USUARIOATIVO"
+
+  @man @exec
   Esquema do Cenário: Validação de mensagens de erro na inclusão de usuário
     Dado que estou no formulario de "BTNINSERT"
     Quando eu informar "Teste" no campo "USUARIOLOGIN"
@@ -49,7 +48,7 @@ Funcionalidade: Permitir manutenção de usuário no sistema de gestão de usuá
       | campolimpo     | mensagem                                       | alerta                 |
       | "USUARIOLOGIN" | "O campo Login é obrigatório. Favor informar." | "USUARIOLOGIN_Balloon" |
       | "USUARIONOME"  | "O campo Nome é obrigatório. Favor informar."  | "USUARIONOME_Balloon"  |
-      | "USUARIOSENHA" | "O campo Senha é obrigatório. Favor informar." | "USUARIOSENHA_Balloon" |
+      | "USUARIOSENHA" | "o campo senha é obrigatório. favor informar." | "USUARIOSENHA_Balloon" |
 
   @man
   Cenário: Inclusão de novo usuário
