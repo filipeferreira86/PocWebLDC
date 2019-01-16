@@ -18,8 +18,7 @@ import cucumber.api.junit.Cucumber;
 				"src/test/resources/features/pesquisarUsuario.feature",
 				"src/test/resources/features/manutencaoUsuario.feature"},
 		glue = "br.com.gx2.steps",
-		snippets = SnippetType.CAMELCASE,
-		tags = "@exec"
+		snippets = SnippetType.CAMELCASE
 		)
 
 public class RunnerTest {
