@@ -157,13 +157,14 @@ public class Steps {
 
 	@Quando("^eu clicar no \"([^\"]*)\"$")
 	public void euClicarNo(String id) throws Throwable {
-		WebElement btnAprovUsuario = driver.findElement(By.id(id));
+		WebElement btnAprovUsuario = driverEspera.until(ExpectedConditions.elementToBeClickable((By.id(id))));
+		Thread.sleep(1000);
 		btnAprovUsuario.click();
 	}
 
-	@Então("^deve exibir texto \"([^\"]*)\"$")
-	public void deveExibirTexto(String text) throws Throwable {
-		WebElement lblTexto = driver.findElement(By.partialLinkText(text));
+	@Então("^deve exibir texto \"([^\"]*)\" no label \"([^\"]*)\"$")
+	public void deveExibirTextoNoLabel(String text, String xpath) throws Throwable {
+		WebElement lblTexto = driverEspera.until(ExpectedConditions.elementToBeClickable((By.xpath(xpath))));
 		Assert.assertEquals(text, lblTexto.getText());
 	}
 
