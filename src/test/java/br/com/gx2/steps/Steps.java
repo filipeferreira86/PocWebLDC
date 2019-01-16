@@ -45,7 +45,8 @@ public class Steps {
 
 	@Quando("^eu informar \"([^\"]*)\" no campo \"([^\"]*)\"$")
 	public void euInformarNoCampo(String login, String id) throws Throwable {
-		WebElement efLogin = driver.findElement(By.id(id));
+		Thread.sleep(1000);
+		WebElement efLogin = driverEspera.until(ExpectedConditions.elementToBeClickable((By.id(id))));
 		efLogin.sendKeys(login);
 		cenario.embed(PrtSrc.capturar(driver), "image/png");
 
@@ -173,9 +174,9 @@ public class Steps {
 
 	@Dado("^que estou no formulario de \"([^\"]*)\"$")
 	public void queEstouNoFormularioDe(String id) throws Throwable {
+		Thread.sleep(1000);
 		WebElement btnInsert = driverEspera.until(ExpectedConditions.elementToBeClickable(By.id(id)));
 		cenario.embed(PrtSrc.capturar(driver), "image/png");
-		Thread.sleep(1000);
 		btnInsert.click();
 	}
 

@@ -34,7 +34,7 @@ Funcionalidade: Permitir manutenção de usuário no sistema de gestão de usuá
     E deve exibir texto "Ativo" no label "/html/body/form/div[2]/div[2]/div/div/div/div/div[3]/div/div/div/div/div/div[2]/div/div/div[5]/div/div/label"
     E campo "USUARIOATIVO"
 
-  @man @exec
+  @man
   Esquema do Cenário: Validação de mensagens de erro na inclusão de usuário
     Dado que estou no formulario de "BTNINSERT"
     Quando eu informar "Teste" no campo "USUARIOLOGIN"
@@ -60,24 +60,23 @@ Funcionalidade: Permitir manutenção de usuário no sistema de gestão de usuá
     Então deve exibir uma grid "GridContainerTbl"
     E dentro da "GridContainerTbl" o "Teste"
 
-  @man
+  @man @exec
   Esquema do Cenário: Validação de mensagens de erro na alteração de usuário
-    Dado que estou no formulario de "BTNINSERT"
+    Dado eu informar "Teste" no campo "vUSUARIONOME"
+    E que estou no formulario de "span_vUPDATE_0001"
     Quando limpar campo <campolimpo>
     E clicar no botão "BTN_ENTER"
     Então deve exibir mensagem <mensagem> no campo <alerta>
 
     Exemplos: 
       | campolimpo     | mensagem                                       | alerta                 |
-      | "USUARIOLOGIN" | "O campo Login é obrigatório. Favor informar." | "USUARIOLOGIN_Balloon" |
       | "USUARIONOME"  | "O campo Nome é obrigatório. Favor informar."  | "USUARIONOME_Balloon"  |
       | "USUARIOSENHA" | "O campo Senha é obrigatório. Favor informar." | "USUARIOSENHA_Balloon" |
 
-  @man
+  @man @exec
   Cenário: Alteração de usuário
     Dado que estou no formulario de "span_vUPDATE_0001"
-    Quando eu informar "Teste1" no campo "USUARIOLOGIN"
-    E informar "Teste1" no campo "USUARIONOME"
+    Quando eu informar "Teste1" no campo "USUARIONOME"
     E informar "Teste1" no campo "USUARIOSENHA"
     E clicar no botão "BTN_ENTER"
     Então deve exibir uma grid "GridContainerTbl"
