@@ -1,8 +1,8 @@
-#language: pt
+ #language: pt
 Funcionalidade: Permitir pesquisar usuário na tela de cadastro de usuário
 
   Contexto: 
-    Dado que estou na pagina "http://192.168.0.107:8080/POCJavaJavaEnvironment/servlet/com.pocjava.login"
+    Dado que estou na pagina "http://192.168.0.109:8080/POCJavaJavaEnvironment/servlet/com.pocjava.login"
     Quando eu informar "Filipe" no campo "vUSUARIOLOGIN"
     E informar "1234" no campo "vUSUARIOSENHA"
     E cliar no botão "BTNLOGIN"

@@ -16,7 +16,8 @@ import cucumber.api.junit.Cucumber;
 				"rerun:target/rerun.txt"},
 		features = {"src/test/resources/features/login.feature",
 				"src/test/resources/features/pesquisarUsuario.feature",
-				"src/test/resources/features/manutencaoUsuario.feature"},
+				"src/test/resources/features/manutencaoUsuario.feature",
+				"src/test/resources/features/relatorioUsuarios.feature"},
 		glue = "br.com.gx2.steps",
 		snippets = SnippetType.CAMELCASE
 		)

@@ -117,7 +117,6 @@ public class Steps {
 	@Então("^deve exibir uma grid \"([^\"]*)\"$")
 	public void deveExibirUmaGrid(String grid) throws Throwable {
 		WebElement grdUsuario = driverEspera.until(ExpectedConditions.elementToBeClickable(By.id(grid)));
-		System.out.println(grdUsuario.isDisplayed());
 		cenario.embed(PrtSrc.capturar(driver), "image/png");
 		Assert.assertTrue(grdUsuario.isDisplayed());
 	}
@@ -202,6 +201,39 @@ public class Steps {
 		cenario.embed(PrtSrc.capturar(driver), "image/png");
 		Assert.assertEquals(msg, blnAlerta.getText());
 	}
+
+	@Então("^deve exibir um comboBox \"([^\"]*)\"$")
+	public void deveExibirUmComboBox(String id) throws Throwable {
+		WebElement cmbAtivo = driverEspera.until(ExpectedConditions.elementToBeClickable(By.id(id)));
+		cmbAtivo.click();
+		cenario.embed(PrtSrc.capturar(driver), "image/png");
+		Assert.assertTrue(cmbAtivo.getText().contains("Sim"));
+	}
+	
+	@Quando("^clicar no comboBox \"([^\"]*)\"$")
+	public void clicarNoComboBox(String id) throws Throwable {
+		WebElement cmbAtivo = driverEspera.until(ExpectedConditions.elementToBeClickable(By.id(id)));
+		cmbAtivo.click();
+		cenario.embed(PrtSrc.capturar(driver), "image/png");
+		Assert.assertTrue(cmbAtivo.getText().contains("Sim"));
+		
+	}
+
+	@Quando("^clicar no item \"([^\"]*)\"$")
+	public void clicarNoItem(String xpath) throws Throwable {
+		WebElement itItem = driverEspera.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
+		itItem.click();
+		cenario.embed(PrtSrc.capturar(driver), "image/png");
+	}
+
+	@Então("^não deve exibir na grid \"([^\"]*)\" itens com itens \"([^\"]*)\" ativos$")
+	public void nãoDeveExibirNaGridItensComItensAtivos(String id, String item) throws Throwable {
+		Thread.sleep(1000);
+		WebElement grdUsuarios = driverEspera.until(ExpectedConditions.elementToBeClickable(By.id(id)));
+		cenario.embed(PrtSrc.capturar(driver), "image/png");
+		Assert.assertTrue(!grdUsuarios.getText().contains(item));
+	}
+
 
 	@After
 	public void depois() {
