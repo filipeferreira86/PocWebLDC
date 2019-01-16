@@ -156,15 +156,15 @@ public class Steps {
 	}
 
 	@Quando("^eu clicar no \"([^\"]*)\"$")
-	public void euClicarNo(String arg1) throws Throwable {
-		// Write code here that turns the phrase above into concrete actions
-		throw new PendingException();
+	public void euClicarNo(String id) throws Throwable {
+		WebElement btnAprovUsuario = driver.findElement(By.id(id));
+		btnAprovUsuario.click();
 	}
 
 	@Então("^deve exibir texto \"([^\"]*)\"$")
-	public void deveExibirTexto(String arg1) throws Throwable {
-		// Write code here that turns the phrase above into concrete actions
-		throw new PendingException();
+	public void deveExibirTexto(String text) throws Throwable {
+		WebElement lblTexto = driver.findElement(By.partialLinkText(text));
+		Assert.assertEquals(text, lblTexto.getText());
 	}
 
 	@Então("^deve exibir texto \"([^\"]*)\" no item$")
