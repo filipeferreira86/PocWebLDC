@@ -146,6 +146,7 @@ public class Steps {
 	@Então("^não deve exibir \"([^\"]*)\" no item da \"([^\"]*)\"$")
 	public void nãoDeveExibirNoItemDa(String arg1, String id) throws Throwable {
 		Thread.sleep(1000);
+		cenario.embed(PrtSrc.capturar(driver), "image/png");
 		Assert.assertTrue(driver.findElements(By.id(id)).size() < 1);
 	}
 
@@ -160,17 +161,20 @@ public class Steps {
 		WebElement btnAprovUsuario = driverEspera.until(ExpectedConditions.elementToBeClickable((By.id(id))));
 		Thread.sleep(1000);
 		btnAprovUsuario.click();
+		cenario.embed(PrtSrc.capturar(driver), "image/png");
 	}
 
 	@Então("^deve exibir texto \"([^\"]*)\" no label \"([^\"]*)\"$")
 	public void deveExibirTextoNoLabel(String text, String xpath) throws Throwable {
 		WebElement lblTexto = driverEspera.until(ExpectedConditions.elementToBeClickable((By.xpath(xpath))));
+		cenario.embed(PrtSrc.capturar(driver), "image/png");
 		Assert.assertEquals(text, lblTexto.getText());
 	}
 
 	@Dado("^que estou no formulario de \"([^\"]*)\"$")
 	public void queEstouNoFormularioDe(String id) throws Throwable {
 		WebElement btnInsert = driverEspera.until(ExpectedConditions.elementToBeClickable(By.id(id)));
+		cenario.embed(PrtSrc.capturar(driver), "image/png");
 		Thread.sleep(1000);
 		btnInsert.click();
 	}
@@ -180,17 +184,20 @@ public class Steps {
 		WebElement efLimpar = driverEspera.until(ExpectedConditions.elementToBeClickable(By.id(id)));
 		efLimpar.clear();
 		efLimpar.sendKeys(Keys.TAB);
+		cenario.embed(PrtSrc.capturar(driver), "image/png");
 	}
 
 	@Quando("^clicar no botão \"([^\"]*)\"$")
 	public void clicarNoBotão(String id) throws Throwable {
 		WebElement btnConfirmar = driverEspera.until(ExpectedConditions.elementToBeClickable(By.id(id)));
 		btnConfirmar.click();
+		cenario.embed(PrtSrc.capturar(driver), "image/png");
 	}
 
 	@Então("^deve exibir mensagem \"([^\"]*)\" no campo \"([^\"]*)\"$")
 	public void deveExibirMensagemNoCampo(String msg, String id) throws Throwable {
 		WebElement blnAlerta = driverEspera.until(ExpectedConditions.elementToBeClickable(By.id(id)));
+		cenario.embed(PrtSrc.capturar(driver), "image/png");
 		Assert.assertEquals(msg, blnAlerta.getText());
 	}
 
