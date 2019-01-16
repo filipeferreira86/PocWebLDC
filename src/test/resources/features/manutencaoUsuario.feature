@@ -48,7 +48,7 @@ Funcionalidade: Permitir manutenção de usuário no sistema de gestão de usuá
       | campolimpo     | mensagem                                       | alerta                 |
       | "USUARIOLOGIN" | "O campo Login é obrigatório. Favor informar." | "USUARIOLOGIN_Balloon" |
       | "USUARIONOME"  | "O campo Nome é obrigatório. Favor informar."  | "USUARIONOME_Balloon"  |
-      | "USUARIOSENHA" | "o campo senha é obrigatório. favor informar." | "USUARIOSENHA_Balloon" |
+      | "USUARIOSENHA" | "O campo Senha é obrigatório. Favor informar." | "USUARIOSENHA_Balloon" |
 
   @man
   Cenário: Inclusão de novo usuário
