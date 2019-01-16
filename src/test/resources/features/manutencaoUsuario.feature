@@ -75,6 +75,7 @@ Funcionalidade: Permitir manutenção de usuário no sistema de gestão de usuá
 
   @man @exec
   Cenário: Alteração de usuário
+    Dado eu informar "Teste" no campo "vUSUARIONOME"
     Dado que estou no formulario de "span_vUPDATE_0001"
     Quando eu informar "Teste1" no campo "USUARIONOME"
     E informar "Teste1" no campo "USUARIOSENHA"
