@@ -41,7 +41,7 @@ Funcionalidade: Permitir manutenção de usuário no sistema de gestão de usuá
     E informar "Teste" no campo "USUARIONOME"
     E informar "Teste" no campo "USUARIOSENHA"
     E limpar campo <campolimpo>
-    E clicar no botão "BTN_ENTER" do item
+    E clicar no botão "BTN_ENTER" #Por Id
     Então deve exibir mensagem <mensagem> no campo <alerta>
 
     Exemplos: 
@@ -56,7 +56,7 @@ Funcionalidade: Permitir manutenção de usuário no sistema de gestão de usuá
     Quando eu informar "Teste" no campo "USUARIOLOGIN"
     E informar "Teste" no campo "USUARIONOME"
     E informar "Teste" no campo "USUARIOSENHA"
-    E clicar no botão "BTN_ENTER"
+    E clicar no botão "BTN_ENTER" #Por Id
     Então deve exibir uma grid "GridContainerTbl"
     E dentro da "GridContainerTbl" o "Teste"
 
@@ -65,7 +65,7 @@ Funcionalidade: Permitir manutenção de usuário no sistema de gestão de usuá
     Dado eu informar "Teste" no campo "vUSUARIONOME"
     E que estou no formulario de "vUPDATE_0001"
     Quando limpar campo <campolimpo>
-    E clicar no botão "BTN_ENTER"
+    E clicar no botão "BTN_ENTER" #Por Id
     Então deve exibir mensagem <mensagem> no campo <alerta>
 
     Exemplos: 
@@ -79,6 +79,6 @@ Funcionalidade: Permitir manutenção de usuário no sistema de gestão de usuá
     Dado que estou no formulario de "vUPDATE_0001"
     Quando eu informar "Teste1" no campo "USUARIONOME"
     E informar "Teste1" no campo "USUARIOSENHA"
-    E clicar no botão "BTN_ENTER"
+    E clicar no botão "BTN_ENTER" #Por Id
     Então deve exibir uma grid "GridContainerTbl"
     E dentro da "GridContainerTbl" o "Teste1"
