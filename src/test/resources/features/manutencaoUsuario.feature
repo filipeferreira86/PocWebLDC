@@ -41,7 +41,7 @@ Funcionalidade: Permitir manutenção de usuário no sistema de gestão de usuá
     E informar "Teste" no campo "USUARIONOME"
     E informar "Teste" no campo "USUARIOSENHA"
     E limpar campo <campolimpo>
-    E clicar no botão "BTN_ENTER"
+    E clicar no botão "BTN_ENTER" do item
     Então deve exibir mensagem <mensagem> no campo <alerta>
 
     Exemplos: 
