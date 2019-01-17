@@ -172,8 +172,8 @@ public class Steps {
 	}
 
 	@Quando("^eu clicar no \"([^\"]*)\"$")
-	public void euClicarNo(String id) throws Throwable {
-		WebElement btnAprovUsuario = driverEspera.until(ExpectedConditions.elementToBeClickable((By.id(id))));
+	public void euClicarNo(String name) throws Throwable {
+		WebElement btnAprovUsuario = driverEspera.until(ExpectedConditions.elementToBeClickable((By.name(name))));
 		Thread.sleep(1000);
 		btnAprovUsuario.click();
 		Thread.sleep(TIMESLEEPPRINT);
