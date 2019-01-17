@@ -23,9 +23,10 @@ import cucumber.api.java.pt.Quando;
 
 public class Steps {
 
-	WebDriver driver;
-	Scenario cenario;
-	WebDriverWait driverEspera;
+	private WebDriver driver;
+	private Scenario cenario;
+	private WebDriverWait driverEspera;
+	final static int TIMESLEEPPRINT = 1000;
 
 	@Before
 	public void antes(Scenario c) {
@@ -40,6 +41,7 @@ public class Steps {
 	@Dado("^que estou na pagina \"([^\"]*)\"$")
 	public void queEstouNaPagina(String site) throws Throwable {
 		driver.get(site);
+		Thread.sleep(TIMESLEEPPRINT);
 		cenario.embed(PrtSrc.capturar(driver), "image/png");
 	}
 
@@ -48,6 +50,7 @@ public class Steps {
 		Thread.sleep(1000);
 		WebElement efLogin = driverEspera.until(ExpectedConditions.elementToBeClickable((By.id(id))));
 		efLogin.sendKeys(login);
+		Thread.sleep(TIMESLEEPPRINT);
 		cenario.embed(PrtSrc.capturar(driver), "image/png");
 
 	}
@@ -56,6 +59,7 @@ public class Steps {
 	public void informarNoCampo(String senha, String id) throws Throwable {
 		WebElement efSenha = driver.findElement(By.id(id));
 		efSenha.sendKeys(senha);
+		Thread.sleep(TIMESLEEPPRINT);
 		cenario.embed(PrtSrc.capturar(driver), "image/png");
 	}
 
@@ -63,21 +67,24 @@ public class Steps {
 	public void cliarNoBotão(String name) throws Throwable {
 		WebElement btnLogin = driver.findElement(By.name(name));
 		btnLogin.click();
+		Thread.sleep(TIMESLEEPPRINT);
 		cenario.embed(PrtSrc.capturar(driver), "image/png");
 	}
 
 	@Então("^deve logar exibindo texto \"([^\"]*)\" no \"([^\"]*)\"$")
 	public void deveLogarExibindoTextoNo(String resultado, String id) throws Throwable {
 		WebElement lblRes = driverEspera.until(ExpectedConditions.elementToBeClickable(By.id(id)));
-		Assert.assertEquals(resultado, lblRes.getText());
+		Thread.sleep(TIMESLEEPPRINT);
 		cenario.embed(PrtSrc.capturar(driver), "image/png");
+		Assert.assertEquals(resultado, lblRes.getText());
 	}
 
 	@Então("^exibir mensagem de erro \"([^\"]*)\" no \"([^\"]*)\"$")
 	public void exibirMensagemDeErroNo(String resultado, String id) throws Throwable {
 		WebElement lblRes = driverEspera.until(ExpectedConditions.elementToBeClickable(By.id(id)));
-		Assert.assertEquals(resultado, lblRes.getText());
+		Thread.sleep(TIMESLEEPPRINT);
 		cenario.embed(PrtSrc.capturar(driver), "image/png");
+		Assert.assertEquals(resultado, lblRes.getText());
 	}
 
 	// Validar tela de Login:
@@ -85,12 +92,14 @@ public class Steps {
 	@Quando("^eu acessar a pagina \"([^\"]*)\"$")
 	public void euAcessarAPagina(String site) throws Throwable {
 		driver.get(site);
+		Thread.sleep(TIMESLEEPPRINT);
 		cenario.embed(PrtSrc.capturar(driver), "image/png");
 	}
 
 	@Então("^deve exibir \"([^\"]*)\" no campo \"([^\"]*)\"$")
 	public void deveExibirNoCampo(String texto, String id) throws Throwable {
 		WebElement lblCabecalho = driver.findElement(By.id(id));
+		Thread.sleep(TIMESLEEPPRINT);
 		cenario.embed(PrtSrc.capturar(driver), "image/png");
 		Assert.assertEquals(texto, lblCabecalho.getText());
 	}
@@ -98,6 +107,7 @@ public class Steps {
 	@Então("^campo \"([^\"]*)\"$")
 	public void campo(String id) throws Throwable {
 		WebElement efLogin = driver.findElement(By.id(id));
+		Thread.sleep(TIMESLEEPPRINT);
 		cenario.embed(PrtSrc.capturar(driver), "image/png");
 		Assert.assertTrue("Item não está visivel", efLogin.isDisplayed());
 	}
@@ -111,12 +121,14 @@ public class Steps {
 		WebElement mnCadU = driverEspera.until(ExpectedConditions.elementToBeClickable(By.partialLinkText(linkText)));
 		Thread.sleep(1000);
 		mnCadU.click();
+		Thread.sleep(TIMESLEEPPRINT);
 		cenario.embed(PrtSrc.capturar(driver), "image/png");
 	}
 
 	@Então("^deve exibir uma grid \"([^\"]*)\"$")
 	public void deveExibirUmaGrid(String grid) throws Throwable {
 		WebElement grdUsuario = driverEspera.until(ExpectedConditions.elementToBeClickable(By.id(grid)));
+		Thread.sleep(TIMESLEEPPRINT);
 		cenario.embed(PrtSrc.capturar(driver), "image/png");
 		Assert.assertTrue(grdUsuario.isDisplayed());
 	}
@@ -124,6 +136,7 @@ public class Steps {
 	@Então("^dentro da \"([^\"]*)\" o \"([^\"]*)\"$")
 	public void dentroDaO(String id, String user1) throws Throwable {
 		WebElement grdUsuario = driverEspera.until(ExpectedConditions.elementToBeClickable(By.id(id)));
+		Thread.sleep(TIMESLEEPPRINT);
 		cenario.embed(PrtSrc.capturar(driver), "image/png");
 		Assert.assertTrue("Item não está visivel", grdUsuario.getText().contains(user1));
 	}
@@ -133,19 +146,21 @@ public class Steps {
 		WebElement mnCadU = driverEspera.until(ExpectedConditions.elementToBeClickable(By.partialLinkText(linkText)));
 		Thread.sleep(1000);
 		mnCadU.click();
+		Thread.sleep(TIMESLEEPPRINT);
 		cenario.embed(PrtSrc.capturar(driver), "image/png");
 	}
 
 	@Então("^deve exibir \"([^\"]*)\" no item da \"([^\"]*)\"$")
 	public void deveExibirNoItemDa(String texto, String id) throws Throwable {
 		WebElement grItem = driverEspera.until(ExpectedConditions.elementToBeClickable(By.id(id)));
+		Thread.sleep(TIMESLEEPPRINT);
 		cenario.embed(PrtSrc.capturar(driver), "image/png");
 		Assert.assertTrue("Item não está visivel", grItem.isDisplayed());
 	}
 
 	@Então("^não deve exibir \"([^\"]*)\" no item da \"([^\"]*)\"$")
 	public void nãoDeveExibirNoItemDa(String arg1, String id) throws Throwable {
-		Thread.sleep(1000);
+		Thread.sleep(TIMESLEEPPRINT);
 		cenario.embed(PrtSrc.capturar(driver), "image/png");
 		Assert.assertTrue(driver.findElements(By.id(id)).size() < 1);
 	}
@@ -161,12 +176,14 @@ public class Steps {
 		WebElement btnAprovUsuario = driverEspera.until(ExpectedConditions.elementToBeClickable((By.id(id))));
 		Thread.sleep(1000);
 		btnAprovUsuario.click();
+		Thread.sleep(TIMESLEEPPRINT);
 		cenario.embed(PrtSrc.capturar(driver), "image/png");
 	}
 
 	@Então("^deve exibir texto \"([^\"]*)\" no label \"([^\"]*)\"$")
 	public void deveExibirTextoNoLabel(String text, String xpath) throws Throwable {
 		WebElement lblTexto = driverEspera.until(ExpectedConditions.elementToBeClickable((By.xpath(xpath))));
+		Thread.sleep(TIMESLEEPPRINT);
 		cenario.embed(PrtSrc.capturar(driver), "image/png");
 		Assert.assertEquals(text, lblTexto.getText());
 	}
@@ -175,8 +192,9 @@ public class Steps {
 	public void queEstouNoFormularioDe(String id) throws Throwable {
 		Thread.sleep(1000);
 		WebElement btnInsert = driverEspera.until(ExpectedConditions.elementToBeClickable(By.id(id)));
-		cenario.embed(PrtSrc.capturar(driver), "image/png");
 		btnInsert.click();
+		Thread.sleep(TIMESLEEPPRINT);
+		cenario.embed(PrtSrc.capturar(driver), "image/png");
 	}
 
 	@Quando("^limpar campo \"([^\"]*)\"$")
@@ -184,20 +202,23 @@ public class Steps {
 		WebElement efLimpar = driverEspera.until(ExpectedConditions.elementToBeClickable(By.id(id)));
 		efLimpar.clear();
 		efLimpar.sendKeys(Keys.TAB);
+		Thread.sleep(TIMESLEEPPRINT);
 		cenario.embed(PrtSrc.capturar(driver), "image/png");
 	}
 
 	@Quando("^clicar no botão \"([^\"]*)\"$")
 	public void clicarNoBotão(String id) throws Throwable {
 		WebElement btnConfirmar = driverEspera.until(ExpectedConditions.elementToBeClickable(By.id(id)));
-		Thread.sleep(1000);
+		Thread.sleep(TIMESLEEPPRINT);
 		btnConfirmar.click();
+		Thread.sleep(2000);
 		cenario.embed(PrtSrc.capturar(driver), "image/png");
 	}
 
 	@Então("^deve exibir mensagem \"([^\"]*)\" no campo \"([^\"]*)\"$")
 	public void deveExibirMensagemNoCampo(String msg, String id) throws Throwable {
 		WebElement blnAlerta = driverEspera.until(ExpectedConditions.elementToBeClickable(By.id(id)));
+		Thread.sleep(TIMESLEEPPRINT);
 		cenario.embed(PrtSrc.capturar(driver), "image/png");
 		Assert.assertEquals(msg, blnAlerta.getText());
 	}
@@ -206,6 +227,7 @@ public class Steps {
 	public void deveExibirUmComboBox(String id) throws Throwable {
 		WebElement cmbAtivo = driverEspera.until(ExpectedConditions.elementToBeClickable(By.id(id)));
 		cmbAtivo.click();
+		Thread.sleep(TIMESLEEPPRINT);
 		cenario.embed(PrtSrc.capturar(driver), "image/png");
 		Assert.assertTrue(cmbAtivo.getText().contains("Sim"));
 	}
@@ -214,6 +236,7 @@ public class Steps {
 	public void clicarNoComboBox(String id) throws Throwable {
 		WebElement cmbAtivo = driverEspera.until(ExpectedConditions.elementToBeClickable(By.id(id)));
 		cmbAtivo.click();
+		Thread.sleep(TIMESLEEPPRINT);
 		cenario.embed(PrtSrc.capturar(driver), "image/png");
 		Assert.assertTrue(cmbAtivo.getText().contains("Sim"));
 		
@@ -223,6 +246,7 @@ public class Steps {
 	public void clicarNoItem(String xpath) throws Throwable {
 		WebElement itItem = driverEspera.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
 		itItem.click();
+		Thread.sleep(TIMESLEEPPRINT);
 		cenario.embed(PrtSrc.capturar(driver), "image/png");
 	}
 
@@ -230,6 +254,7 @@ public class Steps {
 	public void nãoDeveExibirNaGridItensComItensAtivos(String id, String item) throws Throwable {
 		Thread.sleep(1000);
 		WebElement grdUsuarios = driverEspera.until(ExpectedConditions.elementToBeClickable(By.id(id)));
+		Thread.sleep(TIMESLEEPPRINT);
 		cenario.embed(PrtSrc.capturar(driver), "image/png");
 		Assert.assertTrue(!grdUsuarios.getText().contains(item));
 	}
