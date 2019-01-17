@@ -188,6 +188,15 @@ public class Steps {
 		Assert.assertEquals(text, lblTexto.getText());
 	}
 
+	@Dado("^que estou no formulario de \"([^\"]*)\" #Por Id$")
+	public void queEstouNoFormularioDePorId(String id) throws Throwable {
+		Thread.sleep(1000);
+		WebElement btnInsert = driverEspera.until(ExpectedConditions.elementToBeClickable(By.id(id)));
+		btnInsert.click();
+		Thread.sleep(TIMESLEEPPRINT);
+		cenario.embed(PrtSrc.capturar(driver), "image/png");
+	}
+	
 	@Dado("^que estou no formulario de \"([^\"]*)\"$")
 	public void queEstouNoFormularioDe(String name) throws Throwable {
 		Thread.sleep(1000);
@@ -216,7 +225,7 @@ public class Steps {
 	}
 	
 	@Quando("^clicar no botão \"([^\"]*)\" #Por Id$")
-	public void clicarNoBotãoDoItem(String id) throws Throwable {
+	public void clicarNoBotãoPorId(String id) throws Throwable {
 		WebElement btnConfirmar = driverEspera.until(ExpectedConditions.elementToBeClickable(By.id(id)));
 		Thread.sleep(TIMESLEEPPRINT);
 		btnConfirmar.click();

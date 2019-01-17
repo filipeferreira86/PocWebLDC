@@ -63,7 +63,7 @@ Funcionalidade: Permitir manutenção de usuário no sistema de gestão de usuá
   @man
   Esquema do Cenário: Validação de mensagens de erro na alteração de usuário
     Dado eu informar "Teste" no campo "vUSUARIONOME"
-    E que estou no formulario de "vUPDATE_0001"
+    E que estou no formulario de "vUPDATE_0001" #Por Id
     Quando limpar campo <campolimpo>
     E clicar no botão "BTN_ENTER" #Por Id
     Então deve exibir mensagem <mensagem> no campo <alerta>
