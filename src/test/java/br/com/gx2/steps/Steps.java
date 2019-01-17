@@ -189,9 +189,9 @@ public class Steps {
 	}
 
 	@Dado("^que estou no formulario de \"([^\"]*)\"$")
-	public void queEstouNoFormularioDe(String id) throws Throwable {
+	public void queEstouNoFormularioDe(String name) throws Throwable {
 		Thread.sleep(1000);
-		WebElement btnInsert = driverEspera.until(ExpectedConditions.elementToBeClickable(By.id(id)));
+		WebElement btnInsert = driverEspera.until(ExpectedConditions.elementToBeClickable(By.name(name)));
 		btnInsert.click();
 		Thread.sleep(TIMESLEEPPRINT);
 		cenario.embed(PrtSrc.capturar(driver), "image/png");

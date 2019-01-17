@@ -13,25 +13,25 @@ Funcionalidade: Permitir manutenção de usuário no sistema de gestão de usuá
   Cenário: Validação de tela de cadastro de usuário
     Dado que estou na tela de cadastro usuário
     Quando eu clicar no "BTNINSERT"
-    Então deve exibir texto "Login" no label "/html/body/form/div[2]/div[2]/div/div/div/div/div[3]/div/div/div/div/div/div[2]/div/div/div[2]/div/div/label"
+    Então deve exibir texto "Login" no label "/html/body/form/div[1]/div/div/div/div/div/div/div/div[3]/div/div/div/div/div/div[2]/div/div/div[1]/div/div/label"
     E campo "USUARIOLOGIN"
-    E deve exibir texto "Nome" no label "/html/body/form/div[2]/div[2]/div/div/div/div/div[3]/div/div/div/div/div/div[2]/div/div/div[3]/div/div/label"
+    E deve exibir texto "Nome" no label "/html/body/form/div[1]/div/div/div/div/div/div/div/div[3]/div/div/div/div/div/div[2]/div/div/div[2]/div/div/label"
     E campo "USUARIONOME"
-    E deve exibir texto "Senha" no label "/html/body/form/div[2]/div[2]/div/div/div/div/div[3]/div/div/div/div/div/div[2]/div/div/div[4]/div/div/label"
+    E deve exibir texto "Senha" no label "/html/body/form/div[1]/div/div/div/div/div/div/div/div[3]/div/div/div/div/div/div[2]/div/div/div[3]/div/div/label"
     E campo "USUARIOSENHA"
-    E deve exibir texto "Ativo" no label "/html/body/form/div[2]/div[2]/div/div/div/div/div[3]/div/div/div/div/div/div[2]/div/div/div[5]/div/div/label"
+    E deve exibir texto "Ativo" no label "/html/body/form/div[1]/div/div/div/div/div/div/div/div[3]/div/div/div/div/div/div[2]/div/div/div[4]/div/div/label"
     E campo "USUARIOATIVO"
 
   @man
   Cenário: Validação de tela de alteração de usuário
     Dado que estou na tela de cadastro usuário
-    Quando eu clicar no "span_vUPDATE_0001"
-    Então deve exibir texto "Login" no label "/html/body/form/div[2]/div[2]/div/div/div/div/div[3]/div/div/div/div/div/div[2]/div/div/div[2]/div/div/label"
-    E deve exibir texto "Nome" no label "/html/body/form/div[2]/div[2]/div/div/div/div/div[3]/div/div/div/div/div/div[2]/div/div/div[3]/div/div/label"
+    Quando eu clicar no "vUPDATE_0001"
+    Então deve exibir texto "Login" no label "/html/body/form/div[1]/div/div/div/div/div/div/div/div[3]/div/div/div/div/div/div[2]/div/div/div[1]/div/div/label"
+    E deve exibir texto "Nome" no label "/html/body/form/div[1]/div/div/div/div/div/div/div/div[3]/div/div/div/div/div/div[2]/div/div/div[2]/div/div/label"
     E campo "USUARIONOME"
-    E deve exibir texto "Senha" no label "/html/body/form/div[2]/div[2]/div/div/div/div/div[3]/div/div/div/div/div/div[2]/div/div/div[4]/div/div/label"
+    E deve exibir texto "Senha" no label "/html/body/form/div[1]/div/div/div/div/div/div/div/div[3]/div/div/div/div/div/div[2]/div/div/div[3]/div/div/label"
     E campo "USUARIOSENHA"
-    E deve exibir texto "Ativo" no label "/html/body/form/div[2]/div[2]/div/div/div/div/div[3]/div/div/div/div/div/div[2]/div/div/div[5]/div/div/label"
+    E deve exibir texto "Ativo" no label "/html/body/form/div[1]/div/div/div/div/div/div/div/div[3]/div/div/div/div/div/div[2]/div/div/div[4]/div/div/label"
     E campo "USUARIOATIVO"
 
   @man
@@ -63,7 +63,7 @@ Funcionalidade: Permitir manutenção de usuário no sistema de gestão de usuá
   @man
   Esquema do Cenário: Validação de mensagens de erro na alteração de usuário
     Dado eu informar "Teste" no campo "vUSUARIONOME"
-    E que estou no formulario de "span_vUPDATE_0001"
+    E que estou no formulario de "vUPDATE_0001"
     Quando limpar campo <campolimpo>
     E clicar no botão "BTN_ENTER"
     Então deve exibir mensagem <mensagem> no campo <alerta>
@@ -76,7 +76,7 @@ Funcionalidade: Permitir manutenção de usuário no sistema de gestão de usuá
   @man
   Cenário: Alteração de usuário
     Dado eu informar "Teste" no campo "vUSUARIONOME"
-    Dado que estou no formulario de "span_vUPDATE_0001"
+    Dado que estou no formulario de "vUPDATE_0001"
     Quando eu informar "Teste1" no campo "USUARIONOME"
     E informar "Teste1" no campo "USUARIOSENHA"
     E clicar no botão "BTN_ENTER"
