@@ -224,7 +224,7 @@ public class Steps {
 		cenario.embed(PrtSrc.capturar(driver), "image/png");
 	}
 	
-	@Quando("^clicar no botão \"([^\"]*)\" #Por Id$")
+	@Quando("^eu clicar no \"([^\"]*)\" #Por Id$")
 	public void clicarNoBotãoPorId(String id) throws Throwable {
 		WebElement btnConfirmar = driverEspera.until(ExpectedConditions.elementToBeClickable(By.id(id)));
 		Thread.sleep(TIMESLEEPPRINT);

@@ -25,7 +25,7 @@ Funcionalidade: Permitir manutenção de usuário no sistema de gestão de usuá
   @man
   Cenário: Validação de tela de alteração de usuário
     Dado que estou na tela de cadastro usuário
-    Quando eu clicar no "vUPDATE_0001"
+    Quando eu clicar no "vUPDATE_0001" #Por Id
     Então deve exibir texto "Login" no label "/html/body/form/div[1]/div/div/div/div/div/div/div/div[3]/div/div/div/div/div/div[2]/div/div/div[1]/div/div/label"
     E deve exibir texto "Nome" no label "/html/body/form/div[1]/div/div/div/div/div/div/div/div[3]/div/div/div/div/div/div[2]/div/div/div[2]/div/div/label"
     E campo "USUARIONOME"
@@ -76,7 +76,7 @@ Funcionalidade: Permitir manutenção de usuário no sistema de gestão de usuá
   @man
   Cenário: Alteração de usuário
     Dado eu informar "Teste" no campo "vUSUARIONOME"
-    Dado que estou no formulario de "vUPDATE_0001"
+    Dado que estou no formulario de "vUPDATE_0001" #Por Id
     Quando eu informar "Teste1" no campo "USUARIONOME"
     E informar "Teste1" no campo "USUARIOSENHA"
     E clicar no botão "BUTTON1"
