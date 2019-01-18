@@ -2,7 +2,7 @@
 Funcionalidade: Permitir manutenção de usuário no sistema de gestão de usuários
 
   Contexto: 
-    Dado que estou na pagina "file:///C:\Users\filipe.jesus\Documents\Testes\scripts\PocWebLDC\src\test\resources\amb\direcionamento.html"
+    Dado que estou na pagina "http://192.168.0.116:8080/CI4GXJavaEnvironment/servlet/com.ci4gx.login"
     Quando eu informar "Filipe" no campo "vUSUARIOLOGIN"
     E informar "1234" no campo "vUSUARIOSENHA"
     E cliar no botão "BTNLOGIN"

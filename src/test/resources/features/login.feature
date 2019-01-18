@@ -1,16 +1,16 @@
 #language: pt
 Funcionalidade: Permitir fazer login no sistema Web
 
-	@log @exec
+	@log
 	Cenário: Validação de tela de login
-		Quando eu acessar a pagina "localhost:8080/jenkins/job/PocWebLdc/ws/src/test/resources/amb/"
+		Quando eu acessar a pagina "http://192.168.0.116:8080/CI4GXJavaEnvironment/servlet/com.ci4gx.login"
 		Então deve exibir "Sistema de controle de usuários" no campo "TEXTBLOCK1"
 		E campo "vUSUARIOLOGIN"
 		E campo "vUSUARIOSENHA"
 
   @log
   Cenário: Fazer login com sucesso
-    Dado que estou na pagina "file:///C:\Users\filipe.jesus\Documents\Testes\scripts\PocWebLDC\src\test\resources\amb\direcionamento.html"
+    Dado que estou na pagina "http://192.168.0.116:8080/CI4GXJavaEnvironment/servlet/com.ci4gx.login"
     Quando eu informar "Filipe" no campo "vUSUARIOLOGIN"
     E informar "1234" no campo "vUSUARIOSENHA"
     E cliar no botão "BTNLOGIN"
@@ -18,7 +18,7 @@ Funcionalidade: Permitir fazer login no sistema Web
 
   @log
   Esquema do Cenário: Fazer login com falha
-    Dado que estou na pagina "file:///C:\Users\filipe.jesus\Documents\Testes\scripts\PocWebLDC\src\test\resources\amb\direcionamento.html"
+    Dado que estou na pagina "http://192.168.0.116:8080/CI4GXJavaEnvironment/servlet/com.ci4gx.login"
     Quando eu informar <login> no campo "vUSUARIOLOGIN"
     E informar <senha> no campo "vUSUARIOSENHA"
     E cliar no botão "BTNLOGIN"
