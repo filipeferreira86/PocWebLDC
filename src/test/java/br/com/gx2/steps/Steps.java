@@ -100,8 +100,6 @@ public class Steps {
 		Assert.assertEquals(resultado, lblRes.getText());
 	}
 
-	// Validar tela de Login:
-
 	@Quando("^eu acessar a pagina \"([^\"]*)\"$")
 	public void euAcessarAPagina(String site) throws Throwable {
 		driver.get(site);
@@ -177,8 +175,6 @@ public class Steps {
 		cenario.embed(PrtSrc.capturar(driver), "image/png");
 		Assert.assertTrue(driver.findElements(By.id(id)).size() < 1);
 	}
-
-//	manutenção:
 
 	@Dado("^que estou na tela de cadastro usuário$")
 	public void queEstouNaTelaDeCadastroUsuário() throws Throwable {
@@ -289,7 +285,6 @@ public class Steps {
 		cenario.embed(PrtSrc.capturar(driver), "image/png");
 		Assert.assertTrue(!grdUsuarios.getText().contains(item));
 	}
-
 
 	@After
 	public void depois() {
