@@ -11,6 +11,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import br.com.gx2.func.OSValidator;
 //Import Classes
 import br.com.gx2.func.PrtSrc;
 //Imports Cucumber
@@ -30,8 +31,15 @@ public class Steps {
 
 	@Before
 	public void antes(Scenario c) {
-		System.setProperty("webdriver.gecko.driver",
-				"src/test/resources/drivers/geckodriver.exe");
+		int os = OSValidator.sistema();
+		if(os==0) {
+			System.setProperty("webdriver.gecko.driver",
+					"src/test/resources/drivers/geckodriver.exe");
+		}else if(os==1) {
+			System.out.println("os é linux");
+		}else {
+			System.out.println("OS não suportado");
+		}
 		driver = new FirefoxDriver();
 		driver.manage().window().maximize();
 		driverEspera = new WebDriverWait(driver, 20);
