@@ -31,7 +31,7 @@ public class Steps {
 	@Before
 	public void antes(Scenario c) {
 		System.setProperty("webdriver.gecko.driver",
-				"C:/Users/filipe.jesus/Documents/Testes/scripts/jars/drivers/geckodriver.exe");
+				"src/test/resources/drivers/geckodriver.exe");
 		driver = new FirefoxDriver();
 		driver.manage().window().maximize();
 		driverEspera = new WebDriverWait(driver, 20);
