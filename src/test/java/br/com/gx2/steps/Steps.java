@@ -34,11 +34,16 @@ public class Steps {
 		int os = OSValidator.sistema();
 		if(os==0) {
 			System.setProperty("webdriver.gecko.driver",
-					"src/test/resources/drivers/geckodriver.exe");
+					"src/test/resources/drivers/win/geckodriver.exe");
 		}else if(os==1) {
-			System.out.println("os é linux");
+			System.setProperty("webdriver.gecko.driver",
+					"src/test/resources/drivers/mac/geckodriver");
+		}else if(os==2){
+			System.setProperty("webdriver.gecko.driver",
+					"src/test/resources/drivers/unix/geckodriver");
 		}else {
-			System.out.println("OS não suportado");
+			System.out.println("Sistema não compativel como script, favor verificar lista de compatibilidades/n"
+					+ "e alterar codigo na linha 45");
 		}
 		driver = new FirefoxDriver();
 		driver.manage().window().maximize();
