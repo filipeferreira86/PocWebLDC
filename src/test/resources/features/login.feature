@@ -1,9 +1,9 @@
 #language: pt
 Funcionalidade: Permitir fazer login no sistema Web
 
-	@log
+	@log @exec
 	Cenário: Validação de tela de login
-		Quando eu acessar a pagina "file:///C:\Users\filipe.jesus\Documents\Testes\scripts\PocWebLDC\src\test\resources\amb\direcionamento.html"
+		Quando eu acessar a pagina "localhost:8080/jenkins/job/PocWebLdc/ws/src/test/resources/amb/direcionamento.php"
 		Então deve exibir "Sistema de controle de usuários" no campo "TEXTBLOCK1"
 		E campo "vUSUARIOLOGIN"
 		E campo "vUSUARIOSENHA"

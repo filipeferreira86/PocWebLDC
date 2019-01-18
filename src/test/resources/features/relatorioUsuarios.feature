@@ -2,7 +2,7 @@
 Funcionalidade: Permitir gerar relatório de usuários em tela
 
   Contexto: 
-    Dado que estou na pagina "file:///C:\Users\filipe.jesus\Documents\Testes\scripts\PocWebLDC\src\test\resources\amb\direcionamento.html"
+    Dado que estou na pagina "http://192.168.0.116:8080/PocWebLDC/src/test/resources/amb/direcionamento.html"
     E eu informar "Filipe" no campo "vUSUARIOLOGIN"
     E informar "1234" no campo "vUSUARIOSENHA"
     E cliar no botão "BTNLOGIN"
