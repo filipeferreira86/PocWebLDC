@@ -2,7 +2,7 @@
 Funcionalidade: Permitir pesquisar usuário na tela de cadastro de usuário
 
   Contexto: 
-    Dado que estou na pagina "http://192.168.0.116:8080/CI4GXJavaEnvironment/servlet/com.ci4gx.login"
+    Dado que estou na pagina "http://gx2-013:8080/CI4GXJavaEnvironment/servlet/com.ci4gx.login"
     Quando eu informar "Filipe" no campo "vUSUARIOLOGIN"
     E informar "1234" no campo "vUSUARIOSENHA"
     E cliar no botão "BTNLOGIN"
