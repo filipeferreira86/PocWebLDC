@@ -13,7 +13,7 @@ Funcionalidade: Permitir fazer login no sistema Web
   Cenário: Fazer login com sucesso
     #Dado que estou na pagina "http://selva:8088/pocldc/servlet/com.ci4gx.login"
     Dado que estou na pagina "http://condor:8080/pocldc/servlet/com.ci4gx.login"
-    Quando eu informar "Filipe" no campo "vUSUARIOLOGIN"
+    Quando eu informar "lmtoller@gmail.com" no campo "vUSUARIOLOGIN"
     E informar "1234" no campo "vUSUARIOSENHA"
     E cliar no botão "BTNLOGIN"
     Então deve logar exibindo texto "Bem vindo Filipe Ferreira de Jesus" no "BOASVINDAS_MPAGE"
