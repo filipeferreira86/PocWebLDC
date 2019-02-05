@@ -4,7 +4,7 @@ Funcionalidade: Permitir gerar relatório de usuários em tela
   Contexto: 
 #   Dado que estou na pagina "http://selva:8088/pocldc/servlet/com.ci4gx.login"
 #		Dado que estou na pagina "http://condor:8080/pocldc/servlet/com.ci4gx.login"
-		Dado que estou na pagina "http://localhost:8080/CI4GX1JavaNoReorg/servlet/com.ci4gx1.login"
+		Dado que estou na pagina "http://localhost:8080/CI4GXJavaNoReorg/servlet/login"
     E eu informar "Filipe" no campo "vUSUARIOLOGIN"
     E informar "1234" no campo "vUSUARIOSENHA"
     E cliar no botão "BTNLOGIN"
