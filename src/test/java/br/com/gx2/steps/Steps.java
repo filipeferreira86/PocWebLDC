@@ -31,7 +31,9 @@ public class Steps {
 
 	@Before
 	public void antes(Scenario c) {
-		int os = OSValidator.sistema();
+		System.setProperty("webdriver.gecko.driver",
+				"src/test/resources/drivers/win/geckodriver.exe");
+		/*int os = OSValidator.sistema();
 		if(os==0) {
 			System.setProperty("webdriver.gecko.driver",
 					"src/test/resources/drivers/win/geckodriver.exe");
@@ -44,7 +46,7 @@ public class Steps {
 		}else {
 			System.out.println("Sistema não compativel como script, favor verificar lista de compatibilidades/n"
 					+ "e alterar codigo na linha 45");
-		}
+		}*/
 		driver = new FirefoxDriver();
 		driver.manage().window().maximize();
 		driverEspera = new WebDriverWait(driver, 20);

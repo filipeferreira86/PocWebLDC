@@ -1,4 +1,4 @@
-#language: pt
+# language: pt
 Funcionalidade: Permitir fazer login no sistema Web
 
 	@log @exec
